@@ -5,7 +5,11 @@ export const colors = {
     grayLight: '#99A2AB',
     grayDark: '#334457',
     white: '#FFFFFF',
+<<<<<<< HEAD
     grayXDark: '#00162E',
+=======
+    grayXdark: '#00162E',
+>>>>>>> 7dbddcc (prettier)
     grayXLight: '#EDEEF0',
   },
 
