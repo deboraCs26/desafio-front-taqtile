@@ -15,7 +15,7 @@ export const typography = {
 
   fontSize: {
     xxLarge: "24px",
-    XLarge: "18px",
+    xLarge: "18px",
     large: "16px",
     medium: "14px",
     small: "12px"
