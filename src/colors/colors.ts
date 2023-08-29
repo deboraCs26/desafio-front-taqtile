@@ -5,7 +5,7 @@ export const colors = {
     grayLight: '#99A2AB',
     grayDark: '#334457',
     white: '#FFFFFF',
-    grayXdark: '#00162E',
+    grayXDark: '#00162E',
     grayXLight: '#EDEEF0',
   },
 
@@ -30,6 +30,7 @@ export const colors = {
   },
 
   state: {
+    errorDark: '#7A1D20',
     statesError: '#CB3135',
     success: '#00A100',
   },
