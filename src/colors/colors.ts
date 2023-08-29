@@ -1,38 +1,36 @@
 export const colors = {
   base: {
-    background: "#F9F9F9",
-    gray: "#667381",
-    grayLight: "#99A2AB",
-    grayDark: "#334457",
-    white: "#FFFFFF",
-    grayXdark:"#00162E",
-    grayXLight: "#EDEEF0"
+    background: '#F9F9F9',
+    gray: '#667381',
+    grayLight: '#99A2AB',
+    grayDark: '#334457',
+    white: '#FFFFFF',
+    grayXdark: '#00162E',
+    grayXLight: '#EDEEF0',
   },
 
   brand: {
-    cta: "#FFA33E",
-    primary: "#0B4687",
-    secondaryDark: "#CDEBF7",
-    ctaLight: "#FFDCB5",
-    ctaDark: "#EA662B",
-    primaryDark: "#002F59",
-    secondary: "#E7F0F1",
-    primaryGradient: "#0079BC"
+    cta: '#FFA33E',
+    primary: '#0B4687',
+    secondaryDark: '#CDEBF7',
+    ctaLight: '#FFDCB5',
+    ctaDark: '#EA662B',
+    primaryDark: '#002F59',
+    secondary: '#E7F0F1',
+    primaryGradient: '#0079BC',
   },
 
   accessory: {
-    purple: "#6B2AD3",
-    navy: "#001CBF",
-    greenPool: "#48E8CD",
-    blue: "#2140FC",
-    lovers: "#EA662B",
-    premium: "#0079BC"
+    purple: '#6B2AD3',
+    navy: '#001CBF',
+    greenPool: '#48E8CD',
+    blue: '#2140FC',
+    lovers: '#EA662B',
+    premium: '#0079BC',
   },
 
   state: {
-    warningDark: "#665800",
-    statesErrorLight: "#FFDD0040",
-    statesError: "#CB3135",
-    success: "#00A100"
-  }
-}
+    statesError: '#CB3135',
+    success: '#00A100',
+  },
+};
