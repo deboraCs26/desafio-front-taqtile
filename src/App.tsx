@@ -17,7 +17,7 @@ export function App() {
       <Body1 color="gray" weight="bold">
         Body1
       </Body1>
-      <Body2 color="grayDark" height="large" size="large">
+      <Body2 color="errorDark" height="large" size="large">
         Body2
       </Body2>
       <Price weight="semiBold" size="XLarge" height="XLarge">
