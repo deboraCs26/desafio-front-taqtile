@@ -11,9 +11,9 @@ export const H2 = ({ children }: H2Props) => {
     <h2
       style={{
         fontFamily: typography.family.primary,
-        fontSize: typography.fontSize.xLarge,
+        fontSize: typography.fontSize.XLarge,
         fontWeight: typography.fontWeight.bold,
-        lineHeight: typography.lineHeight.xLarge,
+        lineHeight: typography.lineHeight.XLarge,
         color: colors.brand.primary,
         margin: 0,
       }}

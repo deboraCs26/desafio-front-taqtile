@@ -13,7 +13,7 @@ export const H3 = ({ children }: H3Props) => {
         fontFamily: typography.family.primary,
         fontSize: typography.fontSize.medium,
         fontWeight: typography.fontWeight.bold,
-        lineHeight: typography.lineHeight.xLarge,
+        lineHeight: typography.lineHeight.XLarge,
         color: colors.base.grayDark,
         margin: 0,
       }}
