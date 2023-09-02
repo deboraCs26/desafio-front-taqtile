@@ -14,6 +14,7 @@ export function App() {
       <H2>Heading 2</H2>
       <H3>Heading 3</H3>
       <H4 color="gray">Heading 4</H4>
+      <H4 color="grayXDark">Heading 4</H4>
       <H4 color="grayDark">Heading 4</H4>
       <Body1 color="XDark" weight="bold">
         Body1
