@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 import { colors } from '../../colors/colors';
 import { typography } from '../typography';
+import { PriceProps } from '.';
 
-export const StyledPrice = styled.p<{
-  weight?: 'bold' | 'semiBold' | 'regular';
-  size?: 'XLarge' | 'medium';
-  color?: 'grayLight' | 'primary';
-  height?: 'small' | 'XLarge';
-}>`
+export const StyledPrice = styled.p<PriceProps>`
   font-family: ${typography.family.primary};
   font-size: ${(props) => (props.size === 'XLarge' ? typography.fontSize.XLarge : typography.fontSize.medium)};
   font-weight: ${(props) =>

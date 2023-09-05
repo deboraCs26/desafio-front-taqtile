@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledBody2 } from './style';
 
-interface Body2Props {
+export interface Body2Props {
   children: React.ReactNode;
   weight?: 'semiBold' | 'regular';
   color?: 'ctaDark' | 'gray' | 'grayDark' | 'errorDark';

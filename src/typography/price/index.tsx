@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledPrice } from './style';
 
-interface PriceProps {
+export interface PriceProps {
   children: React.ReactNode;
   weight?: 'bold' | 'semiBold' | 'regular';
   size?: 'XLarge' | 'medium';

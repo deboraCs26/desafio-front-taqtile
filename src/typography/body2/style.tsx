@@ -1,36 +1,25 @@
 import styled from 'styled-components';
 import { colors } from '../../colors/colors';
 import { typography } from '../typography';
+import { Body2Props } from '.';
 
-const textColor = (color?: string) => {
-  if (!color) {
-    return '';
-  }
+type Colors = 'cta' | 'gray' | 'grayDark' | 'errorDark';
 
-  if (color === 'ctaDark') {
-    return colors.brand.ctaDark;
-  } else if (color === 'gray') {
-    return colors.base.gray;
-  } else if (color === 'grayDark') {
-    return colors.base.grayDark;
-  } else if (color === 'errorDark') {
-    return colors.state.errorDark;
-  } else {
-    return '';
-  }
+const color = {
+  base: {
+    cta: colors.brand.ctaDark,
+    gray: colors.base.gray,
+    grayDark: colors.base.grayDark,
+    errorDark: colors.state.statesError,
+  },
 };
 
-export const StyledBody2 = styled.div<{
-  size?: 'large' | 'small';
-  weight?: 'semiBold' | 'regular';
-  height?: 'large' | 'medium';
-  color?: 'ctaDark' | 'gray' | 'grayDark' | 'errorDark';
-}>`
+export const StyledBody2 = styled.div<Body2Props>`
   font-family: ${typography.family.primary};
   font-size: ${(props) => (props.size === 'large' ? typography.fontSize.large : typography.fontSize.small)};
   font-weight: ${(props) =>
     props.weight === 'semiBold' ? typography.fontWeight.semiBold : typography.fontWeight.regular};
   line-height: ${(props) => (props.height === 'large' ? typography.lineHeight.large : typography.lineHeight.medium)};
-  color: ${({ color }) => textColor(color)};
+  color: ${(props) => (props.color ? color.base[props.color as Colors] : '')};
   margin: 0;
 `;
