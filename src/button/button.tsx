@@ -18,41 +18,48 @@ interface ButtonProps {
   style?: React.CSSProperties;
 }
 
-const Button = styled.button<ButtonProps>`
+export const Button = styled.button<ButtonProps>`
   font-family: ${typography.family.primary};
   font-size: ${typography.fontSize.large};
   font-weight: ${typography.fontWeight.semiBold};
-  border-radius: ${typography.borderRadius.mediumRadius}
+  border-radius: ${typography.borderRadius.mediumRadius};
   width: ${({ expand }) => (expand ? '100%' : 'auto')};
   height: ${({ compact }) => (compact ? '32px' : '40px')};
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   margin: 0;
   border-radius: 4px;
   border: none;
   padding-inline: 16px;
-
+  cursor: pointer;
   background-color: ${({ variant, disabled }) =>
-    variant === 'primary' || disabled ? colors.base.background : "";
-    ?colors.brand.primary
-    : variant === 'secondary'
-    ? colors.brand.secondary
-    : variant === 'cta'
-    ? colors.brand.cta
-    : 'transparent'};
-
-color: ${
-  ({ variant }) =>
+    disabled
+      ? colors.base.background
+      : variant === 'primary'
+      ? colors.brand.primary
+      : variant === 'secondary'
+      ? colors.brand.secondary
+      : variant === 'cta'
+      ? colors.brand.cta
+      : 'transparent'};
+  color: ${({ variant }) =>
     variant === 'primary'
       ? colors.base.white
       : variant === 'secondary' || variant === 'cta'
-        ? colors.brand.primary
-        : ''
-};
+      ? colors.brand.primary
+      : ''};
 `;
-export const ButtonComponent = ({ variant, children, icon, onClick, compact, expand, disabled=false }: ButtonProps) => (
+
+export const ButtonComponent = ({
+  variant,
+  children,
+  icon,
+  onClick,
+  compact,
+  expand,
+  disabled = false,
+}: ButtonProps) => (
   <Button onClick={onClick} variant={variant} compact={compact} expand={expand} disabled={disabled}>
     {!!icon && (
       <>
