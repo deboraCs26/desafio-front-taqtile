@@ -46,10 +46,11 @@ export function App() {
       <Button variant="primary" icon={faPlus} onClick={handleClick}>
         Adicionar
       </Button>
+      <Button variant="cta">Fechar pedido</Button>
+      <Button variant="secondary">Voltar para o perfil</Button>
       <LinkButtonComponent color="ctaDark" to="href">
         Continuar comprando
       </LinkButtonComponent>
-
       <LinkButtonComponent color="stateError" to="href">
         Remover
       </LinkButtonComponent>
