@@ -3,15 +3,15 @@ import { StyleLinkButton } from './link-button';
 import { StyleButton } from '../typography-button';
 
 export interface LinkButtonProps {
-  to: string;
   children: React.ReactNode;
   color: 'stateError' | 'ctaDark';
   expanded?: boolean;
+  to: string;
 }
 
-export const LinkButtonComponent: React.FC<LinkButtonProps> = ({ to, children, color }) => {
+export const LinkButtonComponent: React.FC<LinkButtonProps> = ({ to, children, color, expanded }) => {
   return (
-    <StyleLinkButton to={to} color={color}>
+    <StyleLinkButton to={to} color={color} expanded={expanded}>
       <StyleButton>{children}</StyleButton>
     </StyleLinkButton>
   );
