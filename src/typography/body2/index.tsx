@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyledBody2 } from './style';
 
+type Colors = 'cta' | 'gray' | 'grayDark' | 'errorDark' | 'ctaDark';
+
 export interface Body2Props {
   children: React.ReactNode;
   weight?: 'semiBold' | 'regular';
-  color?: 'ctaDark' | 'gray' | 'grayDark' | 'errorDark';
+  color?: Colors;
   height?: 'large' | 'medium';
   size?: 'large' | 'small';
 }
