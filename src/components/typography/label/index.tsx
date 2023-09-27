@@ -1,14 +1,15 @@
 import React from 'react';
 import { StyledLabel } from './style';
 
-interface LabelProps {
+export interface LabelProps {
   children: React.ReactNode;
-  htmlFor: string;
+  htmlFor?: string;
+  error?: boolean;
 }
 
-export const Label = ({ children, htmlFor }: LabelProps) => {
+export const Label = ({ children, htmlFor, error }: LabelProps) => {
   return (
-    <StyledLabel>
+    <StyledLabel error={error}>
       <label htmlFor={htmlFor}>{children}</label>
     </StyledLabel>
   );
