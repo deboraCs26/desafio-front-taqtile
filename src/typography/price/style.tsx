@@ -12,19 +12,25 @@ interface PriceProps {
 }
 
 const weight = {
-  base: {
+  baseWeight: {
     bold: typography.fontWeight.bold,
     semiBold: typography.fontWeight.semiBold,
     regular: typography.fontWeight.regular,
   },
 };
 
-export const StyledPrice = styled.p<PriceProps>`
+const color = {
+  baseColor: {
+    grayLight: colors.base.grayLight,
+    primary: colors.brand.primary,
+  },
+};
+
+export const Price = styled.p<PriceProps>`
   font-family: ${typography.family.primary};
   font-size: ${(props) => (props.size === 'XLarge' ? typography.fontSize.XLarge : typography.fontSize.medium)};
-  font-weight: ${(props: PriceProps) => (props.weight ? weight.base[props.weight] : '')};
+  font-weight: ${(props: PriceProps) => (props.weight ? weight.baseWeight[props.weight] : '')};
   line-height: ${(props) => (props.height === 'small' ? typography.lineHeight.small : typography.lineHeight.XLarge)};
-  color: ${(props) =>
-    props.color === 'grayLight' ? colors.base.grayLight : props.color === 'primary' ? colors.brand.primary : ''};
+  color: ${(props: PriceProps) => (props.color ? color.baseColor[props.color] : '')};
   margin: 0;
 `;

@@ -6,17 +6,20 @@ interface H4Props {
   color?: 'gray' | 'grayXDark' | 'grayDark';
 }
 
-export const StyledHeading4 = styled.h4<H4Props>`
+const color = {
+  baseColor: {
+    grayXDark: colors.base.grayXDark,
+    gray: colors.base.gray,
+    grayDark: colors.base.grayDark,
+  },
+};
+
+export const Heading4 = styled.h4<H4Props>`
   font-family: ${typography.family.primary};
   font-size: ${typography.fontSize.large};
   font-weight: ${typography.fontWeight.semiBold};
   line-height: ${typography.lineHeight.xxLarge};
-  color: ${(props) =>
-    props.color === 'grayXDark'
-      ? colors.base.grayXDark
-      : props.color === 'gray'
-      ? colors.base.grayDark
-      : colors.base.gray};
+  color: ${(props: H4Props) => (props.color ? color.baseColor[props.color] : '')};
 
   margin: 0;
 `;

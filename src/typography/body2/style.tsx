@@ -21,7 +21,7 @@ const color = {
   },
 };
 
-export const StyledBody2 = styled.p<Body2Props>`
+export const Body2 = styled.p<Body2Props>`
   font-family: ${typography.family.primary};
   font-size: ${(props: Body2Props) => (props.size === 'large' ? typography.fontSize.large : typography.fontSize.small)};
   font-weight: ${(props) =>

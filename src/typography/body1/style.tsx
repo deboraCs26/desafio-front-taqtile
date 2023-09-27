@@ -7,7 +7,7 @@ interface Body1Props {
   color?: 'gray' | 'XDark' | 'success';
 }
 
-export const StyledBody1 = styled.p<Body1Props>`
+export const Body1 = styled.p<Body1Props>`
   font-family: ${typography.family.primary};
   font-size: ${typography.fontSize.large};
   font-weight: ${(props) => (props.weight === 'bold' ? typography.fontWeight.bold : typography.fontWeight.regular)};
