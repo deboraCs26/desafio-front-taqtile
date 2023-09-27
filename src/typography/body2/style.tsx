@@ -1,7 +1,15 @@
 import styled from 'styled-components';
 import { colors } from '../../colors/colors';
 import { typography } from '../typography';
-import { Body2Props } from '.';
+
+type Colors = 'cta' | 'gray' | 'grayDark' | 'errorDark' | 'ctaDark';
+
+export interface Body2Props {
+  weight?: 'semiBold' | 'regular';
+  color?: Colors;
+  height?: 'large' | 'medium';
+  size?: 'large' | 'small';
+}
 
 const color = {
   base: {

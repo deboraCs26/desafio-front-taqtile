@@ -2,7 +2,12 @@ import styled from 'styled-components';
 import { colors } from '../../colors/colors';
 import { typography } from '../typography';
 
-export const StyledBody1 = styled.p<{ weight?: 'bold' | 'regular'; color?: 'gray' | 'XDark' | 'success' }>`
+interface Body1Props {
+  weight?: 'bold' | 'regular';
+  color?: 'gray' | 'XDark' | 'success';
+}
+
+export const StyledBody1 = styled.p<Body1Props>`
   font-family: ${typography.family.primary};
   font-size: ${typography.fontSize.large};
   font-weight: ${(props) => (props.weight === 'bold' ? typography.fontWeight.bold : typography.fontWeight.regular)};
