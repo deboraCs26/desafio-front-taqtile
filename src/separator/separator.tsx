@@ -10,19 +10,15 @@ const StyledSeparator = styled.div<SeparatorProps>`
   ${({ size, horizontal }) => {
     const dimension = horizontal ? 'width' : 'height';
 
-    let height;
+    const sizeOptions = {
+      small: '8px',
+      medium: '16px',
+      large: '24px',
+      XSmall: '4px',
+      XLarge: '32px',
+    };
 
-    if (size === 'small') {
-      height = '8px';
-    } else if (size === 'large') {
-      height = '24px';
-    } else if (size === 'XSmall') {
-      height = '4px';
-    } else if (size === 'XLarge') {
-      height = '32px';
-    } else {
-      height = '16px';
-    }
+    const height = sizeOptions[size] || '16px';
 
     return `
       ${dimension}: ${height};

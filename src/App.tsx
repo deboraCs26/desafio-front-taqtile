@@ -48,12 +48,8 @@ export function App() {
       </Button>
       <Button variant="cta">Fechar pedido</Button>
       <Button variant="secondary">Voltar para o perfil</Button>
-      <LinkButtonComponent color="ctaDark" to="href">
-        Continuar comprando
-      </LinkButtonComponent>
-      <LinkButtonComponent color="stateError" to="href">
-        Remover
-      </LinkButtonComponent>
+      <LinkButtonComponent color="ctaDark">Continuar comprando</LinkButtonComponent>
+      <LinkButtonComponent color="stateError">Remover</LinkButtonComponent>
     </div>
   );
 }
