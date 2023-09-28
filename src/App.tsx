@@ -11,6 +11,9 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { LinkButtonComponent } from './button/link-button/style-link-button';
 
 export function App() {
+  const handleClick = () => {
+    alert('O botão foi clicado!');
+  };
   return (
     <div>
       <Heading1>Heading 1</Heading1>
