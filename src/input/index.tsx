@@ -1,31 +1,36 @@
-import styled from 'styled-components';
-import { InputProps } from './style';
-import { colors } from '../colors/colors';
+import React from 'react';
+import { InputContainer, StyledInput, RelativeContainer, IconContainer } from './style';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { Label } from '../typography/label';
 
-export const StyledInput = styled.input<InputProps>`
-  width: ${({ expand }) => (expand ? '100%' : 'calc(100% - 25px)')};
-  border-radius: 10px;
-  border: 1px solid var(--base-gray-light, #99a2ab);
-  background: var(--base-background, #f9f9f9);
-  outline: none;
-  padding: 12px 20px;
-  margin-top: 8px;
-`;
+export interface InputProps {
+  name?: string;
+  label?: string;
+  icon?: IconDefinition;
+  password?: boolean;
+  expand?: boolean;
+  placeholder?: string | undefined;
+  className?: string;
+}
 
-export const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  margin: 20px;
-`;
+export const CustomInput = ({ label, password, placeholder, icon }: InputProps) => {
+  const inputId = `custom-input-${label ?? 'default'}`;
 
-export const IconContainer = styled.div`
-  position: absolute;
-  top: 35%;
-  right: 5px;
-  color: ${colors.base.gray};
-`;
-
-export const RelativeContainer = styled.div`
-  position: relative;
-`;
+  return (
+    <InputContainer>
+      <Label htmlFor={inputId}>{label}</Label>
+      <RelativeContainer>
+        <StyledInput
+          type={password ? 'password' : 'text'}
+          required
+          id={inputId}
+          {...(placeholder && { placeholder })}
+        />
+        <IconContainer>
+          {icon && <FontAwesomeIcon icon={icon} size="lg" style={{ transform: 'rotate(180deg)' }} />}
+        </IconContainer>
+      </RelativeContainer>
+    </InputContainer>
+  );
+};
