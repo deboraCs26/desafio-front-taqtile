@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { Separator } from '../separator/separator';
 import { StyleButton } from './typography-button';
+import { StyledButton } from './styled-button';
 
 export interface ButtonProps {
   variant: 'primary' | 'secondary' | 'cta';
@@ -17,7 +18,7 @@ export interface ButtonProps {
 }
 
 export const Button = ({ variant, children, icon, onClick, compact, expand, disabled }: ButtonProps) => (
-  <Button onClick={onClick} variant={variant} compact={compact} expand={expand} disabled={disabled}>
+  <StyledButton onClick={onClick} variant={variant} compact={compact} expand={expand} disabled={disabled}>
     {!!icon && (
       <>
         <FontAwesomeIcon icon={icon} className="icon" />
@@ -26,5 +27,5 @@ export const Button = ({ variant, children, icon, onClick, compact, expand, disa
     )}
 
     <StyleButton>{children}</StyleButton>
-  </Button>
+  </StyledButton>
 );
