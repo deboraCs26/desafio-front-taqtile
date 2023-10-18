@@ -32,6 +32,7 @@ export const colors = {
   state: {
     errorDark: '#7A1D20',
     statesError: '#CB3135',
+    stateErrorDark: '#7A1D20',
     success: '#00A100',
   },
 };
