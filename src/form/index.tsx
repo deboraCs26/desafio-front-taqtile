@@ -12,10 +12,7 @@ export interface FormProps {
   body?: string;
   label?: string;
   error?: boolean;
-  minLength?: number;
-  password?: boolean;
   value?: string;
-  expand?: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
