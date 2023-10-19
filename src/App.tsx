@@ -71,6 +71,7 @@ export function App() {
       setNameError('Nome inválido.');
     }
   };
+
   const handleSubmit = () => {
     validateFields();
     validateSelect();
