@@ -17,7 +17,7 @@ export function App() {
   const handleClick = () => {
     alert('O botão foi clicado!');
   };
-  const estados = [
+  const states = [
     { text: 'Acre', value: 'AC' },
     { text: 'Alagoas', value: 'AL' },
     { text: 'Amapá', value: 'AP' },
@@ -47,10 +47,10 @@ export function App() {
     { text: 'Tocantins', value: 'TO' },
   ];
 
-  const [estadoSelecionado, setEstadoSelecionado] = useState<string>('');
+  const [stateSelected, setStateSelected] = useState<string>('');
 
-  const handleEstadoChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setEstadoSelecionado(e.target.value);
+  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setStateSelected(e.target.value);
   };
 
   return (
@@ -98,9 +98,9 @@ export function App() {
       <Separator size="XLarge" />
       <div>
         <Select
-          value={estadoSelecionado}
-          options={estados}
-          onChange={handleEstadoChange}
+          value={stateSelected}
+          options={states}
+          onChange={handleStateChange}
           placeholder="Selecione"
           label="UF"
         />
