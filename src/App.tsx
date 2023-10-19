@@ -6,8 +6,14 @@ import { Heading4 } from './typography/h4/style';
 import { Body1 } from './typography/body1/style';
 import { Body2 } from './typography/body2/style';
 import { Price } from './typography/price/style';
+import { Button } from './button/button';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { LinkButtonComponent } from './button/link-button/style-link-button';
 
 export function App() {
+  const handleClick = () => {
+    alert('O botão foi clicado!');
+  };
   return (
     <div>
       <Heading1>Heading 1</Heading1>
@@ -38,6 +44,15 @@ export function App() {
         Price
       </Price>
       <Price weight="regular">Price</Price>
+      <Heading1>Styleguide</Heading1>
+      <Heading2>Botões</Heading2>
+      <Button variant="primary" icon={faPlus} onClick={handleClick}>
+        Adicionar
+      </Button>
+      <Button variant="cta">Fechar pedido</Button>
+      <Button variant="secondary">Voltar para o perfil</Button>
+      <LinkButtonComponent color="ctaDark">Continuar comprando</LinkButtonComponent>
+      <LinkButtonComponent color="stateError">Remover</LinkButtonComponent>
     </div>
   );
 }

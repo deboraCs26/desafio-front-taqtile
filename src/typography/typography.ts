@@ -27,4 +27,9 @@ export const typography = {
     semiBold: 600,
     regular: 400,
   },
+
+  borderRadius: {
+    smallRadius: '8px',
+    mediumRadius: '10px',
+  },
 };
