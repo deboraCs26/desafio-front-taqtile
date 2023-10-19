@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { CustomInput } from '../input/style';
+import { CustomInput } from '../input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { Body2 } from '../typography/body2';
+import { Body2 } from '../typography/body2/style';
 import { ErrorForm, FormContainer, IconForm } from './style';
 import { Label } from '../typography/label';
 
@@ -12,11 +12,14 @@ export interface FormProps {
   body?: string;
   label?: string;
   error?: boolean;
+  minLength?: number;
+  password?: boolean;
   value?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  expand?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const StyledForm = ({ error, value, onChange, body, icon, label }: FormProps) => {
+export const StyledForm = ({ error, value, body, icon, label, onChange }: FormProps) => {
   const [focused, setFocused] = useState(false);
 
   const handleInputFocus = () => {
@@ -31,11 +34,11 @@ export const StyledForm = ({ error, value, onChange, body, icon, label }: FormPr
     <FormContainer>
       {label && <Label error={error}>{label}</Label>}
       <CustomInput
-        onChange={(e) => onChange(e)}
+        onChange={onChange}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         required={true}
-        isFocused={focused}
+        focused={focused}
         error={error}
         value={value}
       />

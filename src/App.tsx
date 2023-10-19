@@ -7,10 +7,11 @@ import { Body1 } from './components/typography/body1/style';
 import { Body2 } from './components/typography/body2/style';
 import { Price } from './components/typography/price/style';
 import { Button } from './components/button/button';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { LinkButtonComponent } from './components/button/link-button/style-link-button';
 import { CustomInput } from './components/input';
 import { Select } from './components/input/select';
+import { StyledForm } from './form';
 import { Separator } from './components/separator/separator';
 
 export function App() {
@@ -51,6 +52,21 @@ export function App() {
 
   const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setStateSelected(e.target.value);
+  };
+
+  const [name, setName] = useState('');
+  const [nameError, setNameError] = useState('');
+
+  const validateFields = () => {
+    setNameError('');
+    if (!name.trim()) {
+      setNameError('Campo obrigatório.');
+    } else if (name.length < 2) {
+      setNameError('Nome inválido.');
+    }
+  };
+  const handleSubmit = () => {
+    validateFields();
   };
 
   return (
@@ -104,6 +120,21 @@ export function App() {
           placeholder="Selecione"
           label="UF"
         />
+      </div>
+      <div>
+        <Heading1>Meu formulario</Heading1>
+        <StyledForm
+          label="Nome"
+          icon={faExclamationTriangle}
+          body={nameError}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          error={!!nameError}
+        />
+
+        <Button variant="primary" onClick={handleSubmit}>
+          Enviar
+        </Button>
       </div>
     </div>
   );
