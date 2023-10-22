@@ -49,9 +49,15 @@ export function App() {
   ];
 
   const [stateSelected, setStateSelected] = useState<string>('');
+  const [stateError, setStateError] = useState('');
 
-  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setStateSelected(e.target.value);
+  const validateSelect = () => {
+    setStateError('');
+    if (!stateSelected.trim()) {
+      setStateError('Campo obrigatório, selecione um estado');
+    } else if (stateSelected.length !== 2) {
+      setStateError('Estado inválido. Selecione um estado válido.');
+    }
   };
 
   const [name, setName] = useState('');
@@ -67,6 +73,7 @@ export function App() {
   };
   const handleSubmit = () => {
     validateFields();
+    validateSelect();
   };
 
   return (
@@ -116,9 +123,12 @@ export function App() {
         <Select
           value={stateSelected}
           options={states}
-          onChange={handleStateChange}
+          body={stateError}
+          onChange={(e) => setStateSelected(e.target.value)}
           placeholder="Selecione"
           label="UF"
+          error={!!stateError}
+          icon={faExclamationTriangle}
         />
       </div>
       <div>

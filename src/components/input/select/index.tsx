@@ -1,22 +1,52 @@
-import React from 'react';
-import { ContainerSelect, StyledSelect } from './style';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { ContainerSelect, ErrorSelect, IconSelect, StyledSelect } from './style';
 import { Label } from '../../typography/label';
+import { Body2 } from '../../typography/body2/style';
 
 export type SelectProps = {
+  icon?: IconDefinition;
+  body?: string;
   value: string;
   options: { text: string; value: string }[];
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   placeholder?: string;
   expand?: boolean;
   label?: string;
+  focused?: boolean;
+  error?: boolean;
 };
 
-export const Select = ({ options, value, placeholder, onChange, label }: SelectProps) => {
+export const Select = ({ options, value, placeholder, label, error, icon, body, onChange }: SelectProps) => {
+  const [focused, setFocused] = useState(false);
   const inputId = `custom-input-${label ?? 'default'}`;
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    onChange?.(e);
+  };
+
+  const handleSelectFocus = () => {
+    setFocused(true);
+  };
+
+  const handleSelectBlur = () => {
+    setFocused(false);
+  };
+
   return (
     <ContainerSelect>
       <Label htmlFor={inputId}>{label}</Label>
-      <StyledSelect options={options} value={value} onChange={onChange}>
+      <StyledSelect
+        value={value}
+        options={options}
+        focused={focused}
+        error={error}
+        onBlur={handleSelectBlur}
+        onFocus={handleSelectFocus}
+        onChange={handleChange}
+      >
         <option value="" disabled>
           {placeholder}
         </option>
@@ -26,6 +56,14 @@ export const Select = ({ options, value, placeholder, onChange, label }: SelectP
           </option>
         ))}
       </StyledSelect>
+      {error && (
+        <ErrorSelect>
+          <Body2 color="errorDark">
+            <IconSelect>{icon && <FontAwesomeIcon icon={faExclamationTriangle} size="lg" />}</IconSelect>
+            {body}
+          </Body2>
+        </ErrorSelect>
+      )}
     </ContainerSelect>
   );
 };
