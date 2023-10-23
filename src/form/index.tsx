@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { Body2 } from '../typography/body2/style';
-import { ErrorForm, FormContainer, IconForm } from './style';
+import { FormContainer, IconForm } from './style';
 import { Label } from '../typography/label';
 
 export interface FormProps {
@@ -41,12 +41,10 @@ export const StyledForm = ({ error, value, body, icon, label, onChange }: FormPr
         value={value}
       />
       {error && (
-        <ErrorForm>
-          <Body2 color="errorDark">
-            <IconForm>{icon && <FontAwesomeIcon icon={faExclamationTriangle} size="lg" />}</IconForm>
-            {body}
-          </Body2>
-        </ErrorForm>
+        <Body2 color="errorDark">
+          <IconForm>{icon && <FontAwesomeIcon icon={faExclamationTriangle} size="lg" />}</IconForm>
+          {body}
+        </Body2>
       )}
     </FormContainer>
   );

@@ -28,17 +28,13 @@ export const StyledSelect = styled.select<SelectProps>`
   background: ${colors.base.background};
   outline: none;
   padding: 12px 20px;
-  margin-top: 8px;
+  margin: 8px 0;
 `;
 
 export const ContainerSelect = styled.div`
   display: flex;
   flex-direction: column;
   width: 22.3%;
-`;
-
-export const ErrorSelect = styled.div`
-  padding-top: 8px;
 `;
 
 export const IconSelect = styled.div`

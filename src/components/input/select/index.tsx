@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { ContainerSelect, ErrorSelect, IconSelect, StyledSelect } from './style';
+import { ContainerSelect, IconSelect, StyledSelect } from './style';
 import { Label } from '../../typography/label';
 import { Body2 } from '../../typography/body2/style';
 
@@ -57,12 +57,10 @@ export const Select = ({ options, value, placeholder, label, error, icon, body, 
         ))}
       </StyledSelect>
       {error && (
-        <ErrorSelect>
-          <Body2 color="errorDark">
-            <IconSelect>{icon && <FontAwesomeIcon icon={faExclamationTriangle} size="lg" />}</IconSelect>
-            {body}
-          </Body2>
-        </ErrorSelect>
+        <Body2 color="errorDark">
+          <IconSelect>{icon && <FontAwesomeIcon icon={faExclamationTriangle} size="lg" />}</IconSelect>
+          {body}
+        </Body2>
       )}
     </ContainerSelect>
   );

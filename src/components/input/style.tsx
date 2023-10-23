@@ -28,7 +28,7 @@ export const StyledInput = styled.input<InputProps>`
   background: ${colors.base.background};
   outline: none;
   padding: 12px 20px;
-  margin-top: 8px;
+  margin: 8px 0;
 `;
 
 export const InputContainer = styled.div`
