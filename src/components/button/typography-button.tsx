@@ -6,4 +6,5 @@ export const StyleButton = styled.p`
   font-size: ${typography.fontSize.large};
   font-weight: ${typography.fontWeight.semiBold};
   font-height: ${typography.lineHeight.xxLarge};
+  cursor: pointer;
 `;
