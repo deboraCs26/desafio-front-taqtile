@@ -12,7 +12,6 @@ export const StyleLinkButton = styled.button<LinkButtonProps>`
   justify-content: center;
   align-items: center;
   margin: 0;
-  cursor: pointer;
   background: none;
   border: none;
   padding: 8px 16px;
