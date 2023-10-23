@@ -76,7 +76,6 @@ export function App() {
     validateFields();
     validateSelect();
   };
-
   return (
     <div>
       <Heading1>Heading 1</Heading1>
