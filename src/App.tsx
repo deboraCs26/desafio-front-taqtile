@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { Heading1 } from './typography/h1/style';
-import { Heading2 } from './typography/h2/style';
-import { Heading3 } from './typography/h3/style';
-import { Heading4 } from './typography/h4/style';
-import { Body1 } from './typography/body1/style';
-import { Body2 } from './typography/body2/style';
-import { Price } from './typography/price/style';
-import { Button } from './button/button';
+import { Heading1 } from './components/typography/h1/style';
+import { Heading2 } from './components/typography/h2/style';
+import { Heading3 } from './components/typography/h3/style';
+import { Heading4 } from './components/typography/h4/style';
+import { Body1 } from './components/typography/body1/style';
+import { Body2 } from './components/typography/body2/style';
+import { Price } from './components/typography/price/style';
+import { Button } from './components/button/button';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { LinkButtonComponent } from './button/link-button/style-link-button';
-import { CustomInput } from './input';
-import { Select } from './input/select';
-import { Separator } from './separator/separator';
+import { LinkButtonComponent } from './components/button/link-button/style-link-button';
+import { CustomInput } from './components/input';
+import { Select } from './components/input/select';
+import { Separator } from './components/separator/separator';
 
 export function App() {
   const handleClick = () => {
