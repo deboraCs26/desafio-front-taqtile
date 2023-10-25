@@ -5,12 +5,13 @@ export interface LabelProps {
   children: React.ReactNode;
   htmlFor?: string;
   error?: boolean;
+  color?: 'statesError' | 'grayDark';
 }
 
-export const Label = ({ children, htmlFor, error }: LabelProps) => {
+export const Label = ({ children, htmlFor, error, color }: LabelProps) => {
   return (
-    <StyledLabel error={error}>
-      <label htmlFor={htmlFor}>{children}</label>
+    <StyledLabel error={error} color={color} htmlFor={htmlFor}>
+      {children}
     </StyledLabel>
   );
 };

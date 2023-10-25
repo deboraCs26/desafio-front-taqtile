@@ -123,11 +123,10 @@ export function App() {
         <Select
           value={stateSelected}
           options={states}
-          body={stateError}
           onChange={(e) => setStateSelected(e.target.value)}
           placeholder="Selecione"
           label="UF"
-          error={!!stateError}
+          error={stateError}
           icon={faExclamationTriangle}
         />
       </div>
@@ -136,10 +135,9 @@ export function App() {
         <StyledForm
           label="Nome"
           icon={faExclamationTriangle}
-          body={nameError}
           value={name}
           onChange={(e) => setName(e.target.value)}
-          error={!!nameError}
+          error={nameError}
         />
 
         <Button variant="primary" onClick={handleSubmit}>

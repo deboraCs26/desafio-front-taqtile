@@ -13,7 +13,7 @@ export interface InputProps {
   onBlur?: () => void;
   required?: boolean;
   focused?: boolean;
-  error?: boolean;
+  error?: string;
 }
 
 export const CustomInput = ({ label, password, placeholder, error, value, focused, onChange }: InputProps) => {

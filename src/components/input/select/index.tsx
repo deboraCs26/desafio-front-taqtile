@@ -8,7 +8,7 @@ import { Body2 } from '../../typography/body2/style';
 
 export type SelectProps = {
   icon?: IconDefinition;
-  body?: string;
+  error?: string;
   value: string;
   options: { text: string; value: string }[];
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -16,16 +16,11 @@ export type SelectProps = {
   expand?: boolean;
   label?: string;
   focused?: boolean;
-  error?: boolean;
 };
 
-export const Select = ({ options, value, placeholder, label, error, icon, body, onChange }: SelectProps) => {
+export const Select = ({ options, value, placeholder, label, icon, error, onChange }: SelectProps) => {
   const [focused, setFocused] = useState(false);
   const inputId = `custom-input-${label ?? 'default'}`;
-
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e);
-  };
 
   const handleSelectFocus = () => {
     setFocused(true);
@@ -45,7 +40,7 @@ export const Select = ({ options, value, placeholder, label, error, icon, body, 
         error={error}
         onBlur={handleSelectBlur}
         onFocus={handleSelectFocus}
-        onChange={handleChange}
+        onChange={onChange}
       >
         <option value="" disabled>
           {placeholder}
@@ -56,10 +51,10 @@ export const Select = ({ options, value, placeholder, label, error, icon, body, 
           </option>
         ))}
       </StyledSelect>
-      {error && (
+      {!!error && (
         <Body2 color="errorDark">
           <IconSelect>{icon && <FontAwesomeIcon icon={faExclamationTriangle} size="lg" />}</IconSelect>
-          {body}
+          {error}
         </Body2>
       )}
     </ContainerSelect>

@@ -9,15 +9,14 @@ import { Label } from '../typography/label';
 
 export interface FormProps {
   icon?: IconDefinition;
-  body?: string;
+  error?: string;
   label?: string;
-  error?: boolean;
   value?: string;
   expand?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const StyledForm = ({ error, value, body, icon, label, onChange }: FormProps) => {
+export const StyledForm = ({ value, error, icon, label, onChange }: FormProps) => {
   const [focused, setFocused] = useState(false);
 
   const handleInputFocus = () => {
@@ -30,20 +29,20 @@ export const StyledForm = ({ error, value, body, icon, label, onChange }: FormPr
 
   return (
     <FormContainer>
-      {label && <Label error={error}>{label}</Label>}
+      {label && <Label error={!!error}>{label}</Label>}
       <CustomInput
         onChange={onChange}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
-        required={true}
+        required
         focused={focused}
         error={error}
         value={value}
       />
-      {error && (
+      {!!error && (
         <Body2 color="errorDark">
           <IconForm>{icon && <FontAwesomeIcon icon={faExclamationTriangle} size="lg" />}</IconForm>
-          {body}
+          {error}
         </Body2>
       )}
     </FormContainer>
