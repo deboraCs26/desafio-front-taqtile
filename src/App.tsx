@@ -11,7 +11,7 @@ import { faPlus, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons
 import { LinkButtonComponent } from './components/button/link-button/style-link-button';
 import { CustomInput } from './components/input';
 import { Select } from './components/input/select';
-import { StyledForm } from './form';
+import { StyledForm } from './components/form';
 import { Separator } from './components/separator/separator';
 
 export function App() {

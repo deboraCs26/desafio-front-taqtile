@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../../colors/colors';
 import { SelectProps } from '.';
-import { getBorderStyle } from '../../border-state/border-state';
+import { getBorderStyle } from '../../../border-state/border-state';
 
 export const StyledSelect = styled.select<SelectProps>`
   width: ${({ expand }) => (expand ? '100%' : 'calc(100% - 25px)')};

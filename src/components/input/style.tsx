@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { InputProps } from '.';
 import { colors } from '../colors/colors';
-import { getBorderStyle } from '../border-state/border-state';
+import { getBorderStyle } from '../../border-state/border-state';
 
 export const StyledInput = styled.input<InputProps>`
   width: ${({ expand }) => (expand ? '100%' : 'calc(100% - 25px)')};
