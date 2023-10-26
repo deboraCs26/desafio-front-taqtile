@@ -19,10 +19,6 @@ export interface InputProps {
 export const CustomInput = ({ label, password, placeholder, error, value, focused, onChange }: InputProps) => {
   const inputId = `custom-input-${label ?? 'default'}`;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e);
-  };
-
   return (
     <InputContainer>
       <Label htmlFor={inputId}>{label}</Label>
@@ -31,10 +27,10 @@ export const CustomInput = ({ label, password, placeholder, error, value, focuse
           type={password ? 'password' : 'text'}
           required
           id={inputId}
-          {...(placeholder && { placeholder })}
+          {...(!!placeholder && { placeholder })}
           value={value}
           placeholder={label}
-          onChange={handleChange}
+          onChange={onChange}
           focused={focused}
           error={error}
         />
