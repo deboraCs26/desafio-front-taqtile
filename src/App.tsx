@@ -7,10 +7,11 @@ import { Body1 } from './components/typography/body1/style';
 import { Body2 } from './components/typography/body2/style';
 import { Price } from './components/typography/price/style';
 import { Button } from './components/button/button';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { LinkButtonComponent } from './components/button/link-button/style-link-button';
 import { CustomInput } from './components/input';
 import { Select } from './components/input/select';
+import { StyledForm } from './components/form';
 import { Separator } from './components/separator/separator';
 
 export function App() {
@@ -48,9 +49,31 @@ export function App() {
   ];
 
   const [stateSelected, setStateSelected] = useState<string>('');
+  const [stateError, setStateError] = useState('');
 
-  const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setStateSelected(e.target.value);
+  const validateSelect = () => {
+    setStateError('');
+    if (!stateSelected.trim()) {
+      setStateError('Campo obrigatório, selecione um estado');
+    } else if (stateSelected.length !== 2) {
+      setStateError('Estado inválido. Selecione um estado válido.');
+    }
+  };
+
+  const [name, setName] = useState('');
+  const [nameError, setNameError] = useState('');
+
+  const validateFields = () => {
+    setNameError('');
+    if (!name.trim()) {
+      setNameError('Campo obrigatório.');
+    } else if (name.length < 2) {
+      setNameError('Nome inválido.');
+    }
+  };
+  const handleSubmit = () => {
+    validateFields();
+    validateSelect();
   };
 
   return (
@@ -100,10 +123,26 @@ export function App() {
         <Select
           value={stateSelected}
           options={states}
-          onChange={handleStateChange}
+          onChange={(e) => setStateSelected(e.target.value)}
           placeholder="Selecione"
           label="UF"
+          error={stateError}
+          icon={faExclamationTriangle}
         />
+      </div>
+      <div>
+        <Heading1>Meu formulario</Heading1>
+        <StyledForm
+          label="Nome"
+          icon={faExclamationTriangle}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          error={nameError}
+        />
+
+        <Button variant="primary" onClick={handleSubmit}>
+          Enviar
+        </Button>
       </div>
     </div>
   );
