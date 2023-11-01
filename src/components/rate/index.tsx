@@ -16,7 +16,7 @@ export const StarRate: React.FC<StateProps> = () => {
     setRating(index);
   };
 
-  const createStar = (index: number) => (
+  const starIcon = (index: number) => (
     <FontAwesomeIcon
       icon={faStar}
       size="xl"
@@ -28,7 +28,7 @@ export const StarRate: React.FC<StateProps> = () => {
   return (
     <StyledStar>
       {Array.from({ length: 5 }, (_, index) => (
-        <div key={index}>{createStar(index)}</div>
+        <div key={index}>{starIcon(index)}</div>
       ))}
     </StyledStar>
   );
