@@ -13,6 +13,7 @@ import { CustomInput } from './components/input';
 import { Select } from './components/input/select';
 import { StyledForm } from './components/form';
 import { Separator } from './components/separator/separator';
+import { StarRate } from './components/rate';
 
 export function App() {
   const handleClick = () => {
@@ -144,6 +145,7 @@ export function App() {
           Enviar
         </Button>
       </div>
+      <StarRate />
     </div>
   );
 }
