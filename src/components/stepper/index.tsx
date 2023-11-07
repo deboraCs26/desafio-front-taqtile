@@ -1,47 +1,59 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { StepperButton, StepperContainer, StepperValue, StepperBorder } from './style';
+import {
+  StepperButton,
+  StepperContainer,
+  StepperValue,
+  StepperBorder,
+  StyledFontAwesomeIcon,
+  StyledInput,
+} from './style';
 import { Label } from '../typography/label';
 import { colors } from '../colors/colors';
 
 export interface StepperProps {
   icon?: IconDefinition;
-  value: number;
-  onIncrement: () => void;
-  onDecrement?: () => void;
   disabled?: boolean;
   expand?: boolean;
+  value?: number;
 }
 
-export const Stepper = ({ value, onIncrement, onDecrement }: StepperProps) => {
+export const Stepper = () => {
   const [incrementClicked, setIncrementClicked] = useState(false);
+  const [inputValue, setInputValue] = useState('0');
 
   const handleIncrement = () => {
-    onIncrement();
-    setIncrementClicked(!incrementClicked);
+    const incrementedValue = Number(inputValue) + 1;
+    setInputValue(incrementedValue.toString());
+    setIncrementClicked(true);
   };
 
   const handleDecrement = () => {
-    if (onDecrement) {
-      onDecrement();
+    const decrementValue = Number(inputValue) - 1;
+    if (decrementValue >= 0) {
+      setInputValue(decrementValue.toString());
     }
+    setIncrementClicked(false);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
   };
 
   return (
     <StepperContainer>
-      <StepperBorder value={value} onIncrement={handleIncrement} onDecrement={handleDecrement}>
-        <StepperButton onClick={onDecrement}>
+      <StepperBorder>
+        <StepperButton onClick={handleDecrement}>
           <FontAwesomeIcon icon={faMinus} style={{ color: colors.base.grayLight }} />
         </StepperButton>
         <StepperValue>
-          <Label>{value}</Label>
+          <Label>
+            <StyledInput value={inputValue} onChange={handleInputChange} />
+          </Label>
         </StepperValue>
         <StepperButton onClick={handleIncrement}>
-          <FontAwesomeIcon
-            icon={faPlus}
-            style={{ color: incrementClicked ? colors.brand.primary : colors.base.grayLight }}
-          />
+          <StyledFontAwesomeIcon icon={faPlus} incrementClicked={incrementClicked} />
         </StepperButton>
       </StepperBorder>
     </StepperContainer>

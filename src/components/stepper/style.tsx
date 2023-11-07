@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { colors } from '../colors/colors';
 import { StepperProps } from '.';
 import { getBorderStyle } from '../../border-state/border-state';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const StepperBorder = styled.div<StepperProps>`
   width: ${({ expand }) => (expand ? '100%' : '')};
@@ -26,4 +27,16 @@ export const StepperButton = styled.div`
 export const StepperValue = styled.div`
   color: ${colors.base.grayXDark};
   padding: 0 8px;
+`;
+
+export const StyledInput = styled.input`
+  text-align: center;
+  background: ${colors.base.background};
+  outline: none;
+  border: none;
+  width: 100%;
+`;
+
+export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{ incrementClicked: boolean }>`
+  color: ${(props) => (props.incrementClicked ? colors.brand.primary : colors.base.grayLight)};
 `;
