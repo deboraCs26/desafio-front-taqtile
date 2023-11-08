@@ -15,6 +15,7 @@ import { StyledForm } from './components/form';
 import { Separator } from './components/separator/separator';
 import { StarRate } from './components/rate';
 import { Stepper } from './components/stepper';
+import { ProductorCard } from './components/product-card';
 
 export function App() {
   const handleClick = () => {
@@ -156,7 +157,13 @@ export function App() {
         <Heading1>Stepper</Heading1>
         <Stepper />
       </div>
-      <Separator size="XLarge" />
+      <Heading1>Card de Produtos</Heading1>
+      <ProductorCard
+        title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed..."
+        text="Lorem ipsum dolor sit amet, consectetur..."
+        price="R$ 99,90"
+        body="12x de R$ 9,90"
+      />
     </div>
   );
 }
