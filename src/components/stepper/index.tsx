@@ -17,30 +17,41 @@ export interface StepperProps {
   disabled?: boolean;
   expand?: boolean;
   value?: number;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (value: number) => void;
 }
 
-export const Stepper = () => {
+export const Stepper: React.FC<StepperProps> = ({ onChange }) => {
   const [incrementClicked, setIncrementClicked] = useState(false);
   const [inputValue, setInputValue] = useState<number>(0);
 
   const handleIncrement = () => {
-    const incrementedValue = Number(inputValue) + 1;
+    const incrementedValue = inputValue + 1;
     setInputValue(incrementedValue);
     setIncrementClicked(true);
+    if (onChange) {
+      onChange(incrementedValue);
+    }
   };
 
   const handleDecrement = () => {
-    const decrementValue = Number(inputValue) - 1;
+    const decrementValue = inputValue - 1;
     if (decrementValue >= 0) {
       setInputValue(decrementValue);
+      if (onChange) {
+        onChange(decrementValue);
+      }
     }
     setIncrementClicked(false);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(Number(e.target.value));
+    const newValue = Number(e.target.value);
+    setInputValue(newValue);
+    if (onChange) {
+      onChange(newValue);
+    }
   };
+
   return (
     <StepperContainer>
       <StepperBorder>
