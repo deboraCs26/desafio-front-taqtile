@@ -14,6 +14,7 @@ import { Select } from './components/input/select';
 import { StyledForm } from './components/form';
 import { Separator } from './components/separator/separator';
 import { StarRate } from './components/rate';
+import { Stepper } from './components/stepper';
 
 export function App() {
   const handleClick = () => {
@@ -77,6 +78,7 @@ export function App() {
     validateFields();
     validateSelect();
   };
+
   return (
     <div>
       <Heading1>Heading 1</Heading1>
@@ -145,7 +147,14 @@ export function App() {
           Enviar
         </Button>
       </div>
-      <StarRate />
+      <div>
+        <StarRate />
+      </div>
+      <Separator size="medium" />
+      <div>
+        <Heading1>Stepper</Heading1>
+        <Stepper />
+      </div>
     </div>
   );
 }
