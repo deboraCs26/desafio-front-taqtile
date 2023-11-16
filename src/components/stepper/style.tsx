@@ -17,7 +17,7 @@ export const StepperBorder = styled.div<StepperProps>`
 `;
 
 export const StepperContainer = styled.div`
-  width: 9%;
+  width: 40%;
 `;
 
 export const StepperButton = styled.div`

@@ -9,6 +9,7 @@ export const ProductContainer = styled.div`
   width: 15%;
   border-radius: 10px;
   margin: 20px;
+  cursor: pointer;
 `;
 
 export const StyleCardProductor = styled.div`
@@ -21,11 +22,15 @@ export const StyleCardProductor = styled.div`
 export const StyleImageProductor = styled.div`
   display-flex;
   text-align: center;
-  Padding-bottom: 16px;
+  padding-bottom: 16px;
 `;
 
-export const StyleTextProductor = styled.div``;
+export const StyleTextProductor = styled.div`
+  padding-bottom: 16px;
+`;
 
 export const StylePriceProductor = styled.div``;
 
-export const StyleButtonProductor = styled.div``;
+export const StyleButtonProductor = styled.div`
+  display: flex;
+`;

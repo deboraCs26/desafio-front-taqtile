@@ -160,9 +160,10 @@ export function App() {
       <Heading1>Card de Produtos</Heading1>
       <ProductorCard
         title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed..."
-        text="Lorem ipsum dolor sit amet, consectetur..."
+        description="Lorem ipsum dolor sit amet, consectetur..."
         price="R$ 99,90"
         body="12x de R$ 9,90"
+        promotion="De R$ 154,80 por"
       />
     </div>
   );

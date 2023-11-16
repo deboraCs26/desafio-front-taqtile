@@ -31,13 +31,13 @@ export const StyledButton = styled.button<ButtonProps>`
   font-weight: ${typography.fontWeight.semiBold};
   border-radius: ${typography.borderRadius.mediumRadius};
   width: ${({ expand }) => (expand ? '100%' : 'auto')};
-  height: ${({ compact }) => (compact ? '32px' : '40px')};
+  height: ${({ compact }) => (compact ? '32px' : '45px')};
   background-color: ${(props) => buttonStyle[props.variant]?.background || ''};
   color: ${(props) => buttonStyle[props.variant]?.color || ''};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 8px 0;
   border-radius: 4px;
   border: none;
   padding-inline: 16px;
