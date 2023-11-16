@@ -28,18 +28,14 @@ export const Stepper: React.FC<StepperProps> = ({ onChange }) => {
     const incrementedValue = inputValue + 1;
     setInputValue(incrementedValue);
     setIncrementClicked(true);
-    if (onChange) {
-      onChange(incrementedValue);
-    }
+    onChange?.(incrementedValue);
   };
 
   const handleDecrement = () => {
     const decrementValue = inputValue - 1;
     if (decrementValue >= 0) {
       setInputValue(decrementValue);
-      if (onChange) {
-        onChange(decrementValue);
-      }
+      onChange?.(decrementValue);
     }
     setIncrementClicked(false);
   };
@@ -47,9 +43,7 @@ export const Stepper: React.FC<StepperProps> = ({ onChange }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = Number(e.target.value);
     setInputValue(newValue);
-    if (onChange) {
-      onChange(newValue);
-    }
+    onChange?.(newValue);
   };
 
   return (
