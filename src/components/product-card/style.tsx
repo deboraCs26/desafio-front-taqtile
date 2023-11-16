@@ -32,6 +32,7 @@ export const StyleTextProductor = styled.div`
 
 export const StyleButtonProductor = styled.div`
   display: flex;
+  padding-left: 16px;
 `;
 
 export const StylePromotionProductor = styled.div`

@@ -66,13 +66,13 @@ export const ProductorCard = ({ body, title, price, description, promotion }: Pr
           {price}
         </Price>
         <Body2 color="gray">{body}</Body2>
-
-        <StyleButtonProductor>
-          <Stepper />
-          <Separator size="small" horizontal />
-          <Button variant="primary">Adicionar</Button>
-        </StyleButtonProductor>
       </StyleCardProductor>
+
+      <StyleButtonProductor>
+        <Stepper />
+        <Separator size="small" horizontal />
+        <Button variant="primary">Adicionar</Button>
+      </StyleButtonProductor>
     </ProductContainer>
   );
 };
