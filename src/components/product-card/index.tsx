@@ -6,9 +6,9 @@ import {
   ProductContainer,
   StyleCardProductor,
   StyleTextProductor,
-  StylePriceProductor,
   StyleImageProductor,
   StyleButtonProductor,
+  StylePromotionProductor,
 } from './style';
 import { Stepper } from '../stepper';
 import { Price } from '../typography/price/style';
@@ -44,22 +44,28 @@ export const ProductorCard = ({ body, title, price, description, promotion }: Pr
           <Separator size="small" />
           <StarRate />
         </StyleTextProductor>
-        <>
-          {promotion ? (
-            <Price color="grayLight" weight="semiBold" size="medium" style={{ textDecoration: 'line-through' }}>
-              {promotion}
-            </Price>
-          ) : (
-            <Separator size="small" />
-          )}
-        </>
-        <Separator size="medium" />
-        <StylePriceProductor>
-          <Price color="primary" weight="bold" size="XLarge" height="XLarge">
-            {price}
+
+        <StylePromotionProductor>
+          <Price color="grayLight" weight="semiBold" size="medium">
+            De
           </Price>
-          <Body2 color="gray">{body}</Body2>
-        </StylePriceProductor>
+
+          <Separator size="XSmall" horizontal />
+          <Price color="grayLight" weight="semiBold" size="medium" style={{ textDecoration: 'line-through' }}>
+            {promotion}
+          </Price>
+
+          <Separator size="XSmall" horizontal />
+          <Price color="grayLight" weight="semiBold" size="medium">
+            por
+          </Price>
+        </StylePromotionProductor>
+
+        <Separator size="small" />
+        <Price color="primary" weight="bold" size="XLarge" height="XLarge">
+          {price}
+        </Price>
+        <Body2 color="gray">{body}</Body2>
 
         <StyleButtonProductor>
           <Stepper />

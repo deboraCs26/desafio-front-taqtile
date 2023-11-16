@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../colors/colors';
+import { typography } from '../typography/typography';
 
 export const ProductContainer = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ export const ProductContainer = styled.div`
   border: 1px solid ${colors.base.white};
   box-shadow: 0px 2px 8px 0px rgba(55, 84, 102, 0.15);
   width: 15%;
-  border-radius: 10px;
+  border-radius: ${typography.borderRadius.mediumRadius};
   margin: 20px;
   cursor: pointer;
 `;
@@ -29,8 +30,10 @@ export const StyleTextProductor = styled.div`
   padding-bottom: 16px;
 `;
 
-export const StylePriceProductor = styled.div``;
-
 export const StyleButtonProductor = styled.div`
+  display: flex;
+`;
+
+export const StylePromotionProductor = styled.div`
   display: flex;
 `;

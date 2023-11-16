@@ -163,7 +163,7 @@ export function App() {
         description="Lorem ipsum dolor sit amet, consectetur..."
         price="R$ 99,90"
         body="12x de R$ 9,90"
-        promotion="De R$ 154,80 por"
+        promotion="R$ 154,80"
       />
     </div>
   );
