@@ -148,6 +148,7 @@ export function App() {
         </Button>
       </div>
       <div>
+        <Heading1>Star Rate</Heading1>
         <StarRate />
       </div>
       <Separator size="medium" />
@@ -155,6 +156,7 @@ export function App() {
         <Heading1>Stepper</Heading1>
         <Stepper />
       </div>
+      <Separator size="XLarge" />
     </div>
   );
 }
