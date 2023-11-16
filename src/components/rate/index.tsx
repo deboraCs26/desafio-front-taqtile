@@ -10,7 +10,7 @@ type StateProps = {
 };
 
 export const StarRate: React.FC<StateProps> = () => {
-  const [rating, setRating] = useState<number>(0);
+  const [rating, setRating] = useState<number>(-1);
 
   const handleClick = (index: number) => {
     setRating(index);
