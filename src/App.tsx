@@ -16,6 +16,7 @@ import { Separator } from './components/separator/separator';
 import { StarRate } from './components/rate';
 import { Stepper } from './components/stepper';
 import { ProductorCard } from './components/product-card';
+import { CarouselComponentization } from './components/carousel';
 
 export function App() {
   const handleClick = () => {
@@ -173,6 +174,42 @@ export function App() {
         installment_quantity={12}
         installment_value={9.9}
       />
+      <div>
+        <Heading1>Carrossel</Heading1>
+        <CarouselComponentization>
+          <ProductorCard
+            title="Item 1"
+            description="Descrição do item 1"
+            price="R$ 99,90"
+            body="12x de R$ 9,90"
+            promotion="R$ 154,80"
+          />
+
+          <ProductorCard
+            title="Item 2"
+            description="Descrição do item 2"
+            price="R$ 79,90"
+            body="10x de R$ 7,99"
+            promotion="R$ 120,00"
+          />
+
+          <ProductorCard
+            title="Item 2"
+            description="Descrição do item 2"
+            price="R$ 79,90"
+            body="10x de R$ 7,99"
+            promotion="R$ 120,00"
+          />
+
+          <ProductorCard
+            title="Item 2"
+            description="Descrição do item 2"
+            price="R$ 79,90"
+            body="10x de R$ 7,99"
+            promotion="R$ 120,00"
+          />
+        </CarouselComponentization>
+      </div>
     </div>
   );
 }
