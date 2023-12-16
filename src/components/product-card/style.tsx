@@ -4,24 +4,31 @@ import { typography } from '../typography/typography';
 
 export const ProductContainer = styled.div`
   display: flex;
+  justify-content: center;
   flex-direction: column;
   border: 1px solid ${colors.base.white};
   box-shadow: 0px 2px 8px 0px rgba(55, 84, 102, 0.15);
-  width: 15%;
   border-radius: ${typography.borderRadius.mediumRadius};
   margin: 20px;
   cursor: pointer;
+  width: 13%;
 `;
 
 export const StyleCardProductor = styled.div`
-  display-flex;
-  justify-content: center;
-  aling-items: center;
   padding: 16px;
+  .title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: pre-line;
+  }
+  }
 `;
 
 export const StyleImageProductor = styled.div`
-  display-flex;
+  display: flex;
+  justify-content: center;
   text-align: center;
   padding-bottom: 16px;
 `;
@@ -32,7 +39,8 @@ export const StyleTextProductor = styled.div`
 
 export const StyleButtonProductor = styled.div`
   display: flex;
-  padding-left: 16px;
+  justify-content: center;
+  text-align: center;
 `;
 
 export const StylePromotionProductor = styled.div`
