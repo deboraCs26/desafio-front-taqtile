@@ -12,7 +12,7 @@ export const ProductContainer = styled.div`
   margin: 20px;
   cursor: pointer;
   overflow: hidden;
-  width: 13%;
+  width: 200px;
   padding: 16px;
   @media screen and (max-width: 480px) {
     width: 50%;

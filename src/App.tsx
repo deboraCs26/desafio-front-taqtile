@@ -178,38 +178,39 @@ export function App() {
         <Heading1>Carrossel</Heading1>
         <CarouselComponentization>
           <ProductorCard
-            title="Item 1"
-            description="Descrição do item 1"
-            price="R$ 99,90"
-            body="12x de R$ 9,90"
-            promotion="R$ 154,80"
+            title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            description="Lorem ipsum dolor sit amet, consectetur"
+            price={99.9}
+            installment_quantity={12}
+            installment_value={9.9}
           />
 
           <ProductorCard
-            title="Item 2"
-            description="Descrição do item 2"
-            price="R$ 79,90"
-            body="10x de R$ 7,99"
-            promotion="R$ 120,00"
+            title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            description="Lorem ipsum dolor sit amet, consectetur"
+            price={99.9}
+            installment_quantity={12}
+            installment_value={9.9}
           />
 
           <ProductorCard
-            title="Item 2"
-            description="Descrição do item 2"
-            price="R$ 79,90"
-            body="10x de R$ 7,99"
-            promotion="R$ 120,00"
+            title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            description="Lorem ipsum dolor sit amet, consectetur"
+            price={99.9}
+            installment_quantity={12}
+            installment_value={9.9}
           />
 
           <ProductorCard
-            title="Item 2"
-            description="Descrição do item 2"
-            price="R$ 79,90"
-            body="10x de R$ 7,99"
-            promotion="R$ 120,00"
+            title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            description="Lorem ipsum dolor sit amet, consectetur"
+            price={99.9}
+            installment_quantity={12}
+            installment_value={9.9}
           />
         </CarouselComponentization>
       </div>
+      <Separator size="large" />
     </div>
   );
 }
