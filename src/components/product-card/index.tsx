@@ -5,7 +5,6 @@ import { Heading1 } from '../typography/h1/style';
 import {
   ProductContainer,
   StyleCardProductor,
-  StyleTextProductor,
   StyleImageProductor,
   StyleButtonProductor,
   StylePromotionProductor,
@@ -54,45 +53,43 @@ export const ProductorCard = ({
           <img src={imgCard} alt="Imagem do produto" />
         </StyleImageProductor>
 
-        <StyleTextProductor>
-          <Heading1 className="title">{title}</Heading1>
-          <Body2 color="gray" size="small" weight="regular" height="large" className="title">
-            {description}
-          </Body2>
+        <Heading1 className="title">{title}</Heading1>
+        <Body2 color="gray" size="small" weight="regular" height="large" className="title">
+          {description}
+        </Body2>
 
-          <Separator size="small" />
-          <StarRate />
-        </StyleTextProductor>
+        <Separator size="small" />
+        <StarRate />
+        <Separator size="large" />
 
-        <StylePromotionProductor>
-          {promotion !== undefined && (
-            <>
-              <Price color="grayLight" weight="semiBold" size="medium">
-                De
-              </Price>
-              <Separator size="XSmall" horizontal />
-              <Price color="grayLight" weight="semiBold" size="medium" style={{ textDecoration: 'line-through' }}>
-                R$ {formatNumberWithComma(promotion)}
-              </Price>
-              <Separator size="XSmall" horizontal />
-              <Price color="grayLight" weight="semiBold" size="medium">
-                por
-              </Price>
-            </>
-          )}
-          <Separator size="large" />
-        </StylePromotionProductor>
+        {!!promotion && (
+          <StylePromotionProductor>
+            <Price color="grayLight" weight="semiBold" size="medium">
+              De
+            </Price>
+            <Separator size="XSmall" horizontal />
+            <Price color="grayLight" weight="semiBold" size="medium" style={{ textDecoration: 'line-through' }}>
+              R$ {formatNumberWithComma(promotion)}
+            </Price>
+            <Separator size="XSmall" horizontal />
+            <Price color="grayLight" weight="semiBold" size="medium">
+              por
+            </Price>
+            <Separator size="large" />
+          </StylePromotionProductor>
+        )}
         <Price color="primary" weight="bold" size="XLarge" height="XLarge">
           {formattedPrice}
         </Price>
-        {installment_quantity && formattedInstallmentValue ? (
+
+        {!!installment_quantity && !!formattedInstallmentValue && (
           <>
             <Body2 color="gray">
               {installment_quantity}x de {formattedInstallmentValue}
             </Body2>
             <Separator size="small" />
           </>
-        ) : null}
+        )}
         <Body2 color="gray">{body}</Body2>
       </StyleCardProductor>
       <StyleButtonProductor>

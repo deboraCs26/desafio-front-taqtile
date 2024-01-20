@@ -11,7 +11,12 @@ export const ProductContainer = styled.div`
   border-radius: ${typography.borderRadius.mediumRadius};
   margin: 20px;
   cursor: pointer;
+  overflow: hidden;
   width: 13%;
+  padding: 16px;
+  @media screen and (max-width: 480px) {
+    width: 50%;
+  }
 `;
 
 export const StyleCardProductor = styled.div`
@@ -30,10 +35,6 @@ export const StyleImageProductor = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  padding-bottom: 16px;
-`;
-
-export const StyleTextProductor = styled.div`
   padding-bottom: 16px;
 `;
 
