@@ -9,7 +9,7 @@ export interface CarouselProps {
 }
 
 export const CarouselComponentization = ({ children }: CarouselProps) => {
-  const [RenderCarousel, setRenderCarousel] = useState(window.innerWidth <= 480);
+  const [renderCarousel, setRenderCarousel] = useState(window.innerWidth <= 480);
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,15 +23,6 @@ export const CarouselComponentization = ({ children }: CarouselProps) => {
     };
   }, []);
 
-  if (!RenderCarousel) {
-    return (
-      <StyledCardContainer>
-        {children.map((child, index) => (
-          <div key={index}>{child}</div>
-        ))}
-      </StyledCardContainer>
-    );
-  }
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -53,18 +44,26 @@ export const CarouselComponentization = ({ children }: CarouselProps) => {
 
   return (
     <div>
-      <StyleCarousel
-        responsive={responsive}
-        customTransition="transform 500ms ease-in-out"
-        additionalTransfrom={0}
-        className="carousel-without-arrows"
-        itemClass="react-multi-carousel-item"
-        showDots={true}
-        arrows={false}
-        customDot={<CustomDot />}
-      >
-        {children}
-      </StyleCarousel>
+      {renderCarousel ? (
+        <StyleCarousel
+          responsive={responsive}
+          customTransition="transform 500ms ease-in-out"
+          additionalTransfrom={0}
+          className="carousel-without-arrows"
+          itemClass="react-multi-carousel-item"
+          showDots={true}
+          arrows={false}
+          customDot={<CustomDot />}
+        >
+          {children}
+        </StyleCarousel>
+      ) : (
+        <StyledCardContainer>
+          {children.map((child, index) => (
+            <div key={index}>{child}</div>
+          ))}
+        </StyledCardContainer>
+      )}
     </div>
   );
 };
