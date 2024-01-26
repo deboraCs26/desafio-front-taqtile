@@ -20,7 +20,7 @@ export interface StepperProps {
   onChange?: (value: number) => void;
 }
 
-export const Stepper: React.FC<StepperProps> = ({ onChange }) => {
+export const Stepper: React.FC<StepperProps> = ({ onChange, expand }) => {
   const [incrementClicked, setIncrementClicked] = useState(false);
   const [inputValue, setInputValue] = useState<number>(0);
 
@@ -48,7 +48,7 @@ export const Stepper: React.FC<StepperProps> = ({ onChange }) => {
 
   return (
     <StepperContainer>
-      <StepperBorder>
+      <StepperBorder expand={expand}>
         <StepperButton onClick={handleDecrement}>
           <FontAwesomeIcon icon={faMinus} style={{ color: colors.base.grayLight }} />
         </StepperButton>

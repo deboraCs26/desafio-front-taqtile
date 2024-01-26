@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { typography } from '../typography/typography';
 import { colors } from '../colors/colors';
 import { StepperProps } from '.';
 import { getBorderStyle } from '../../border-state/border-state';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const StepperBorder = styled.div<StepperProps>`
-  width: ${({ expand }) => (expand ? '100%' : '')};
-  border-radius: 10px;
+  width: ${({ expand }) => (expand ? '100%' : 'auto')};
+  border-radius: ${typography.borderRadius.mediumRadius};
   border: 1px solid ${(props) => getBorderStyle({ ...props, value: String(props.value) ?? '' })};
   background: ${colors.base.background};
   outline: none;
@@ -17,7 +18,12 @@ export const StepperBorder = styled.div<StepperProps>`
 `;
 
 export const StepperContainer = styled.div`
-  width: 9%;
+  max-width: 100px;
+  flex-grow: 1;
+  @media screen and (max-width: 480px) {
+    max-width: none;
+    width: 90%;
+  }
 `;
 
 export const StepperButton = styled.div`

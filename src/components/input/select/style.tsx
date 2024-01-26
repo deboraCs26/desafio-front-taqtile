@@ -17,6 +17,9 @@ export const ContainerSelect = styled.div`
   display: flex;
   flex-direction: column;
   width: 22.3%;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 export const IconSelect = styled.div`

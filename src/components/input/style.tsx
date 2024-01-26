@@ -17,6 +17,9 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 20%;
+  @media screen and (max-width: 480px) {
+    width: 90%;
+  }
 `;
 
 export const RelativeContainer = styled.div`
