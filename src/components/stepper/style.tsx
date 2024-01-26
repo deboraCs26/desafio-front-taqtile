@@ -20,6 +20,10 @@ export const StepperBorder = styled.div<StepperProps>`
 export const StepperContainer = styled.div`
   max-width: 100px;
   flex-grow: 1;
+  @media screen and (max-width: 480px) {
+    max-width: none;
+    width: 90%;
+  }
 `;
 
 export const StepperButton = styled.div`
