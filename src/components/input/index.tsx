@@ -1,9 +1,13 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { InputContainer, StyledInput, RelativeContainer } from './style';
 import { Label } from '../typography/label';
 
 export interface InputProps {
+  icon?: IconDefinition;
   label?: string;
+  text?: string;
   password?: boolean;
   expand?: boolean;
   placeholder?: string | undefined;
@@ -16,12 +20,23 @@ export interface InputProps {
   error?: string;
 }
 
-export const CustomInput = ({ label, password, placeholder, error, value, focused, onChange }: InputProps) => {
+export const CustomInput = ({
+  label,
+  password,
+  placeholder,
+  error,
+  value,
+  focused,
+  onChange,
+  expand,
+  text,
+  icon,
+}: InputProps) => {
   const inputId = `custom-input-${label ?? 'default'}`;
 
   return (
-    <InputContainer>
-      <Label htmlFor={inputId}>{label}</Label>
+    <InputContainer expand={expand}>
+      {!!label && <Label htmlFor={inputId}>{text}</Label>}
       <RelativeContainer>
         <StyledInput
           type={password ? 'password' : 'text'}
@@ -33,7 +48,13 @@ export const CustomInput = ({ label, password, placeholder, error, value, focuse
           onChange={onChange}
           focused={focused}
           error={error}
+          icon={icon}
         />
+        {!!icon && (
+          <>
+            <FontAwesomeIcon icon={icon} className="iconInput" />
+          </>
+        )}
       </RelativeContainer>
     </InputContainer>
   );

@@ -118,10 +118,11 @@ export function App() {
       </Button>
       <Button variant="cta">Fechar pedido</Button>
       <Button variant="secondary">Voltar para o perfil</Button>
+      <LinkButtonComponent color="baseGray">Carrinho</LinkButtonComponent>
       <LinkButtonComponent color="ctaDark">Continuar comprando</LinkButtonComponent>
       <LinkButtonComponent color="stateError">Remover</LinkButtonComponent>
       <div>
-        <CustomInput label="CRO" password={true} />
+        <CustomInput label="CRO" password={true} text="CRO" />
       </div>
       <Separator size="XLarge" />
       <div>

@@ -4,7 +4,7 @@ import { StyleButton } from '../typography-button';
 
 export interface LinkButtonProps {
   children: React.ReactNode;
-  color: 'stateError' | 'ctaDark';
+  color: 'stateError' | 'baseGray' | 'ctaDark';
   expanded?: boolean;
 }
 
