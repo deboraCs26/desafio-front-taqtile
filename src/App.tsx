@@ -17,6 +17,7 @@ import { StarRate } from './components/rate';
 import { Stepper } from './components/stepper';
 import { ProductorCard } from './components/product-card';
 import { CarouselComponentization } from './components/carousel';
+import { Header } from './components/header';
 
 export function App() {
   const handleClick = () => {
@@ -83,6 +84,9 @@ export function App() {
 
   return (
     <div>
+      <div>
+        <Header />
+      </div>
       <Heading1>Heading 1</Heading1>
       <Heading2>Heading 2</Heading2>
       <Heading3>Heading 3</Heading3>
@@ -120,6 +124,7 @@ export function App() {
       <Button variant="secondary">Voltar para o perfil</Button>
       <LinkButtonComponent color="baseGray">Carrinho</LinkButtonComponent>
       <LinkButtonComponent color="ctaDark">Continuar comprando</LinkButtonComponent>
+      <LinkButtonComponent color="baseGray">Continuar comprando</LinkButtonComponent>
       <LinkButtonComponent color="stateError">Remover</LinkButtonComponent>
       <div>
         <CustomInput label="CRO" password={true} text="CRO" />
