@@ -13,15 +13,24 @@ export const StyledInput = styled.input<InputProps>`
   margin: 8px 0;
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.div<{ expand?: boolean }>`
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: ${({ expand }) => (expand ? '100%' : '20%')};
   @media screen and (max-width: 480px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
 export const RelativeContainer = styled.div`
   position: relative;
+
+  .iconInput {
+    color: ${colors.base.grayLight};
+    position: absolute;
+    left: 59em;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
 `;
