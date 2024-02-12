@@ -74,7 +74,7 @@ export const StyledNumberCart = styled.div`
   transform: translateY(-60%);
 
   @media screen and (max-width: 480px) {
-    left: 4em;
+    left: 3em;
     top: auto;
     transform: translateY(25%);
   }
