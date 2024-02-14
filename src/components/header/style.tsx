@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 480px) {
-    height: 6.5em;
+    height: 11vh;
   }
 `;
 
@@ -17,12 +17,14 @@ export const StyledLogo = styled.div`
   @media screen and (max-width: 480px) {
     display: flex;
     flex-direction: column;
-    padding-top: 1em;
+    padding-top: 12px;
 
     .logoHeader {
-      width: 18%;
-      padding-left: 7em;
-      padding-bottom: 8px;
+      display: block;
+      width: 22%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 4px;
     }
   }
 `;
@@ -30,17 +32,17 @@ export const StyledLogo = styled.div`
 export const StyledHeaderInput = styled.div`
   display: flex;
   align-items: center;
-  width: 60em;
+  width: 55%;
 
   @media screen and (max-width: 480px) {
-    width: 17em;
+    width: 90%;
   }
 `;
 
 export const StyledLinkButton = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 2em;
+  padding-left: 22px;
   cursor: pointer;
 `;
 
@@ -52,13 +54,14 @@ export const StyledCartIcon = styled.div`
   @media screen and (max-width: 480px) {
     display: flex;
     flex-direction: column;
-    left: 15em;
+    position: absolute;
+    margin-left: 68%;
     top: auto;
     padding-bottom: 29%;
     position: absolute;
 
     .carrinhoCompras {
-      transform: translateY(1em);
+      transform: translateY(70%);
     }
   }
 `;
@@ -74,12 +77,13 @@ export const StyledNumberCart = styled.div`
   transform: translateY(-60%);
 
   @media screen and (max-width: 480px) {
-    left: 3em;
+    margin-left: 28px;
     top: auto;
-    transform: translateY(25%);
+    transform: translateY(4%);
   }
 `;
 
 export const StyledMenuHeader = styled.div`
-  transform: translateY(-6.5em);
+  top: auto;
+  transform: translateY(-100px);
 `;
