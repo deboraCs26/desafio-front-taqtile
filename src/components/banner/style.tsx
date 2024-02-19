@@ -8,18 +8,15 @@ export const StyledBanner = styled.div`
   border-radius: ${typography.borderRadius.mediumRadius};
 
   img {
-    width: 74%;
+    width: 82%;
     height: auto;
   }
 
   @media screen and (max-width: 480px) {
-    display: block;
-    padding-left: 16px;
-    width: 120%;
-    height: 12vh;
-
     img {
-      height: 90%;
+      border-radius: ${typography.borderRadius.mediumRadius};
+      width: 88%;
+      height: 12vh;
     }
   }
 `;
