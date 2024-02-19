@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 480px) {
-    height: 11vh;
+    height: 13vh;
   }
 `;
 
@@ -22,9 +22,8 @@ export const StyledLogo = styled.div`
     .logoHeader {
       display: block;
       width: 22%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 4px;
+      margin-left: 32vw;
+      margin-bottom: 14px;
     }
   }
 `;
@@ -47,28 +46,20 @@ export const StyledLinkButton = styled.div`
 `;
 
 export const StyledCartIcon = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
 
   @media screen and (max-width: 480px) {
-    display: flex;
     flex-direction: column;
+    margin-left: 68vw;
+    padding-bottom: 8vh;
     position: absolute;
-    margin-left: 68%;
-    top: auto;
-    padding-bottom: 29%;
-    position: absolute;
-
-    .carrinhoCompras {
-      transform: translateY(70%);
-    }
   }
 `;
 
 export const StyledNumberCart = styled.div`
   position: absolute;
-  left: 10px;
+  margin-left: 8px;
   background-color: ${colors.brand.ctaDark};
   color: ${colors.base.white};
   border-radius: 50%;
@@ -77,13 +68,11 @@ export const StyledNumberCart = styled.div`
   transform: translateY(-60%);
 
   @media screen and (max-width: 480px) {
-    margin-left: 28px;
-    top: auto;
-    transform: translateY(4%);
+    margin-left: 26px;
   }
 `;
 
 export const StyledMenuHeader = styled.div`
-  top: auto;
-  transform: translateY(-100px);
+  position: absolute;
+  transform: translateY(-70%);
 `;

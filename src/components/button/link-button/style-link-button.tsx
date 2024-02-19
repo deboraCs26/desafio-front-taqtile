@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleLinkButton } from './link-button';
-import { ButtonProps, StyleButton } from '../typography-button';
+import { StyleButton, ButtonProps } from '../typography-button';
 
 export interface LinkButtonProps extends ButtonProps {
   children: React.ReactNode;
@@ -8,10 +8,10 @@ export interface LinkButtonProps extends ButtonProps {
   expanded?: boolean;
 }
 
-export const LinkButtonComponent: React.FC<LinkButtonProps> = ({ children, color, expanded, size, weight }) => {
+export const LinkButtonComponent: React.FC<LinkButtonProps> = ({ children, color, expanded, semiBold, largeText }) => {
   return (
     <StyleLinkButton color={color} expanded={expanded}>
-      <StyleButton size={size} weight={weight}>
+      <StyleButton semiBold={semiBold} largeText={largeText}>
         {children}
       </StyleButton>
     </StyleLinkButton>
