@@ -31,7 +31,7 @@ export const StyledLogo = styled.div`
 export const StyledHeaderInput = styled.div`
   display: flex;
   align-items: center;
-  width: 55%;
+  width: 61%;
 
   @media screen and (max-width: 480px) {
     width: 90%;

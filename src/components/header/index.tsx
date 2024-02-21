@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useIsMobile } from '../../resize-page/mobile-use-case';
 import {
   StyledCartIcon,
   StyledHeader,
@@ -19,23 +20,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export const Header = () => {
   const [cartItemsCount, setCartItemsCount] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+  const isMobile = useIsMobile();
 
   const addToCart = () => {
     setCartItemsCount(cartItemsCount + 1);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <StyledHeader>
