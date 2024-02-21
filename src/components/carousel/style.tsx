@@ -21,6 +21,7 @@ export const StyleCarousel = styled(Carousel)<CustomCarouselProps>`
   .react-multi-carousel-item {
     width: 100% !important;
   }
+
   @media screen and (max-width: 480px) {
     width: auto;
   }

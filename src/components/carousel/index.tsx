@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useIsMobile } from '../../resize-page/mobile-use-case';
 import 'react-multi-carousel/lib/styles.css';
 import { StyleCarousel } from './style';
 import { CustomDot } from './style';
@@ -9,19 +10,7 @@ export interface CarouselProps {
 }
 
 export const CarouselComponentization = ({ children }: CarouselProps) => {
-  const [renderCarousel, setRenderCarousel] = useState(window.innerWidth <= 480);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setRenderCarousel(window.innerWidth <= 480);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const isMobile = useIsMobile();
 
   const responsive = {
     superLargeDesktop: {
@@ -44,7 +33,7 @@ export const CarouselComponentization = ({ children }: CarouselProps) => {
 
   return (
     <div>
-      {renderCarousel ? (
+      {isMobile ? (
         <StyleCarousel
           responsive={responsive}
           customTransition="transform 500ms ease-in-out"

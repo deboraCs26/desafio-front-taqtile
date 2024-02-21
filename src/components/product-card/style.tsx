@@ -14,8 +14,9 @@ export const ProductContainer = styled.div`
   overflow: hidden;
   width: 200px;
   padding: 16px;
+
   @media screen and (max-width: 480px) {
-    width: 50%;
+    width: 80%;
   }
 `;
 
@@ -42,6 +43,11 @@ export const StyleButtonProductor = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const StylePromotionProductor = styled.div`
