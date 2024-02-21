@@ -46,7 +46,7 @@ export const Header = () => {
 
         {!isMobile && (
           <StyledLinkButton>
-            <img src={logar} alt="Default profile picture" />
+            <img src={logar} alt="Foto de perfil padrão" />
             <LinkButtonComponent color="baseGray" semiBold largeText>
               Entrar
             </LinkButtonComponent>
@@ -54,7 +54,7 @@ export const Header = () => {
         )}
 
         <StyledCartIcon onClick={addToCart}>
-          <img src={shopping} alt="Shopping cart" />
+          <img src={shopping} alt="Carrinho de compras" />
           <StyledNumberCart>{cartItemsCount}</StyledNumberCart>
 
           {isMobile ? (
