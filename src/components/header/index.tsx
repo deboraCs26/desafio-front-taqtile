@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
-import { StyledCartIcon, StyledHeader, StyledHeaderInput, StyledLinkButton, StyledNumberCart } from './style';
+import { useIsMobile } from '../../resize-page/mobile-use-case';
+import {
+  StyledCartIcon,
+  StyledHeader,
+  StyledHeaderInput,
+  StyledLinkButton,
+  StyledMenuHeader,
+  StyledNumberCart,
+} from './style';
 import logo from './logo.svg';
 import shopping from './icons/cart.png';
 import logar from './icons/logar.png';
+import menu from './icons/menu.png';
 import { StyledLogo } from './style';
 import { CustomInput } from '../input';
 import { LinkButtonComponent } from '../button/link-button/style-link-button';
@@ -11,6 +20,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export const Header = () => {
   const [cartItemsCount, setCartItemsCount] = useState(0);
+  const isMobile = useIsMobile();
 
   const addToCart = () => {
     setCartItemsCount(cartItemsCount + 1);
@@ -19,7 +29,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <StyledLogo>
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" className="logoHeader" />
         <Separator size="medium" horizontal />
 
         <StyledHeaderInput>
@@ -28,16 +38,33 @@ export const Header = () => {
 
         <Separator size="small" horizontal />
 
-        <StyledLinkButton>
-          <img src={logar} alt="logar" />
-          <LinkButtonComponent color="baseGray">Entrar</LinkButtonComponent>
+        {isMobile && (
+          <StyledMenuHeader>
+            <img src={menu} alt="menu" />
+          </StyledMenuHeader>
+        )}
 
-          <StyledCartIcon className="cart-icon-container" onClick={addToCart}>
-            <img src={shopping} alt="carrinho de compras" />
-            <StyledNumberCart className="cart-badge">{cartItemsCount}</StyledNumberCart>
-          </StyledCartIcon>
-          <LinkButtonComponent color="baseGray">Carrinho</LinkButtonComponent>
-        </StyledLinkButton>
+        {!isMobile && (
+          <StyledLinkButton>
+            <img src={logar} alt="Foto de perfil padrão" />
+            <LinkButtonComponent color="baseGray" semiBold largeText>
+              Entrar
+            </LinkButtonComponent>
+          </StyledLinkButton>
+        )}
+
+        <StyledCartIcon onClick={addToCart}>
+          <img src={shopping} alt="Carrinho de compras" />
+          <StyledNumberCart>{cartItemsCount}</StyledNumberCart>
+
+          {isMobile ? (
+            <LinkButtonComponent color="baseGray">Carrinho</LinkButtonComponent>
+          ) : (
+            <LinkButtonComponent color="baseGray" semiBold largeText>
+              Carrinho
+            </LinkButtonComponent>
+          )}
+        </StyledCartIcon>
       </StyledLogo>
     </StyledHeader>
   );

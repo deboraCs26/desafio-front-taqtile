@@ -32,5 +32,9 @@ export const RelativeContainer = styled.div`
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+
+    @media screen and (max-width: 480px) {
+      left: 16em;
+    }
   }
 `;
