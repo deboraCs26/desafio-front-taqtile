@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { Separator } from '../separator/separator';
-import { StyleButton } from './typography-button';
 import { StyledButton } from './styled-button';
 
 export interface ButtonProps {
@@ -15,6 +14,8 @@ export interface ButtonProps {
   expand?: boolean;
   style?: React.CSSProperties;
   text?: string;
+  semiBold?: boolean;
+  largeText?: boolean;
 }
 
 export const Button = ({ variant, children, icon, onClick, compact, expand, disabled }: ButtonProps) => (
@@ -25,7 +26,6 @@ export const Button = ({ variant, children, icon, onClick, compact, expand, disa
         <Separator size="small" horizontal />
       </>
     )}
-
-    <StyleButton>{children}</StyleButton>
+    {children}
   </StyledButton>
 );

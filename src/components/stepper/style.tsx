@@ -22,7 +22,7 @@ export const StepperContainer = styled.div`
   flex-grow: 1;
   @media screen and (max-width: 480px) {
     max-width: none;
-    width: 90%;
+    width: 100%;
   }
 `;
 

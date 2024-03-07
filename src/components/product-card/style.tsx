@@ -14,10 +14,6 @@ export const ProductContainer = styled.div`
   overflow: hidden;
   width: 200px;
   padding: 16px;
-
-  @media screen and (max-width: 480px) {
-    width: 80%;
-  }
 `;
 
 export const StyleCardProductor = styled.div`
@@ -28,7 +24,6 @@ export const StyleCardProductor = styled.div`
     -webkit-box-orient: vertical;
     overflow: hidden;
     white-space: pre-line;
-  }
   }
 `;
 
