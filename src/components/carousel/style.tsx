@@ -19,7 +19,15 @@ export const StyleCarousel = styled(Carousel)<CustomCarouselProps>`
     align-items: center;
   }
   .react-multi-carousel-item {
-    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    .react-multi-carousel-item {
+      width: 100% !important;
+    }
   }
 `;
 

@@ -14,6 +14,12 @@ export const ProductContainer = styled.div`
   overflow: hidden;
   width: 200px;
   padding: 16px;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    margin: 16px;
+    margin-bottom: 24px;
+  }
 `;
 
 export const StyleCardProductor = styled.div`
@@ -24,6 +30,10 @@ export const StyleCardProductor = styled.div`
     -webkit-box-orient: vertical;
     overflow: hidden;
     white-space: pre-line;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 16px;
   }
 `;
 
@@ -42,6 +52,7 @@ export const StyleButtonProductor = styled.div`
   @media screen and (max-width: 480px) {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 `;
 
