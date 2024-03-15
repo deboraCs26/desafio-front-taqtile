@@ -18,7 +18,7 @@ export const ProductContainer = styled.div`
   @media screen and (max-width: 480px) {
     width: 100%;
     margin: 16px;
-    margin-bottom: 24px;
+    padding: 16px;
   }
 `;
 
@@ -42,6 +42,11 @@ export const StyleImageProductor = styled.div`
   justify-content: center;
   text-align: center;
   padding-bottom: 16px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 export const StyleButtonProductor = styled.div`

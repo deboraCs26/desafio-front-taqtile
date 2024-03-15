@@ -11,22 +11,26 @@ export const StyledCardContainer = styled.div`
   display: flex;
 `;
 
+export const CarouselWrapper = styled.div`
+  padding: 18px;
+`;
+
 export const StyleCarousel = styled(Carousel)<CustomCarouselProps>`
   .react-multi-carousel-dot-list {
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
   .react-multi-carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: auto !important;
   }
 
   @media (max-width: 480px) {
     .react-multi-carousel-item {
       width: 100% !important;
+      margin: 0 32px;
     }
   }
 `;

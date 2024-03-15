@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import Carousel from 'react-multi-carousel';
 import { useIsMobile } from '../../resize-page/mobile-use-case';
 import 'react-multi-carousel/lib/styles.css';
-import { StyleCarousel } from './style';
-import { CustomDot } from './style';
-import { StyledCardContainer } from './style';
+import { StyleCarousel, CustomDot, StyledCardContainer, CarouselWrapper } from './style';
 
 export interface CarouselProps {
   children: React.ReactNode[];
 }
 
+interface CarouselRef {
+  goToSlide: (index: number) => void;
+}
+
 export const CarouselComponentization = ({ children }: CarouselProps) => {
   const isMobile = useIsMobile();
+
+  const carouselRef = useRef<CarouselRef | null>(null);
 
   const responsive = {
     superLargeDesktop: {
@@ -31,21 +36,31 @@ export const CarouselComponentization = ({ children }: CarouselProps) => {
     },
   };
 
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.goToSlide(0);
+    }
+  }, []);
+
   return (
     <div>
       {isMobile ? (
-        <StyleCarousel
-          responsive={responsive}
-          customTransition="transform 500ms ease-in-out"
-          additionalTransfrom={0}
-          className="carousel-without-arrows"
-          itemClass="react-multi-carousel-item"
-          showDots={true}
-          arrows={false}
-          customDot={<CustomDot />}
-        >
-          {children}
-        </StyleCarousel>
+        <CarouselWrapper>
+          <StyleCarousel
+            responsive={responsive}
+            customTransition="transform 500ms ease-in-out"
+            additionalTransfrom={0}
+            className="carousel-without-arrows"
+            itemClass="custom-carousel-item"
+            showDots={true}
+            arrows={false}
+            customDot={<CustomDot />}
+            infinite={true}
+            ref={carouselRef as React.Ref<Carousel>}
+          >
+            {children}
+          </StyleCarousel>
+        </CarouselWrapper>
       ) : (
         <StyledCardContainer>
           {children.map((child, index) => (
