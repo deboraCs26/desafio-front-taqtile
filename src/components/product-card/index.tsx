@@ -95,7 +95,9 @@ export const ProductorCard = ({
       <StyleButtonProductor>
         <Stepper />
         <Separator size="small" horizontal />
-        <Button variant="primary">Adicionar</Button>
+        <Button variant="primary" largeText>
+          Adicionar
+        </Button>
       </StyleButtonProductor>
     </ProductContainer>
   );

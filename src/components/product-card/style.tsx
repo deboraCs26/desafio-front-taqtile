@@ -14,8 +14,11 @@ export const ProductContainer = styled.div`
   overflow: hidden;
   width: 200px;
   padding: 16px;
+
   @media screen and (max-width: 480px) {
-    width: 50%;
+    width: 100%;
+    margin: 16px;
+    padding: 16px;
   }
 `;
 
@@ -28,6 +31,9 @@ export const StyleCardProductor = styled.div`
     overflow: hidden;
     white-space: pre-line;
   }
+
+  @media screen and (max-width: 480px) {
+    padding: 16px;
   }
 `;
 
@@ -36,12 +42,23 @@ export const StyleImageProductor = styled.div`
   justify-content: center;
   text-align: center;
   padding-bottom: 16px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 export const StyleButtonProductor = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const StylePromotionProductor = styled.div`

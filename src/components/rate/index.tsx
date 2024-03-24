@@ -19,7 +19,7 @@ export const StarRate: React.FC<StateProps> = () => {
   const starIcon = (index: number) => (
     <FontAwesomeIcon
       icon={faStar}
-      size="xl"
+      size="1x"
       style={{ color: index <= rating ? colors.brand.cta : colors.base.grayLight }}
       onClick={() => handleClick(index)}
     />

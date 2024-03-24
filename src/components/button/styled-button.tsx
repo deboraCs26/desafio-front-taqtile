@@ -42,4 +42,8 @@ export const StyledButton = styled.button<ButtonProps>`
   border: none;
   padding-inline: 16px;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    margin: 0;
+  }
 `;
