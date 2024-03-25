@@ -37,7 +37,7 @@ export const StyledBannerCard = styled.div<BannerCard>`
 
 export const StyledImage = styled.img`
   position: absolute;
-  padding: 0 28px;
+  padding: 0 34px;
   transform: translateY(-50%);
 
   @media screen and (max-width: 480px) {
